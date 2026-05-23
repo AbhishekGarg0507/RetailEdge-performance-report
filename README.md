@@ -72,7 +72,7 @@ Orders grew from 969 in 2020 to 1,687 in 2023 — a 74% increase — while custo
 ### 1. Sales Trends (2020–2023)
 
 <p align="center">
-  <img src="images/SalesDashbaord.png" width="400">
+  <img src="images/SalesDashboard.png">
 </p>
 
 **2020 — The Baseline**
@@ -98,7 +98,9 @@ Growth continued but the profit growth rate (12.5%) fell behind sales growth (20
 
 ### 2. Product Subcategory Analysis
 
-#### 📸 Screenshot: "Sales & Profit by Subcategory" chart — visible on every year's Sales Dashboard
+<p align="center">
+  <img src="images/ProfitVSloss.png" width="700">
+</p>
 
 The subcategory chart is the most analytically rich view in the project. It shows two things side by side: how much each subcategory sold (bar length) and whether it made or lost money (blue = profit, orange = loss).
 
@@ -127,7 +129,9 @@ The subcategory chart is the most analytically rich view in the project. It show
 
 ### 3. Customer Trends (2020–2023)
 
-#### 📸 Screenshot: Customer Dashboard — shown for each year (2020, 2021, 2022, 2023)
+<p align="center">
+  <img src="images/CustomerDashboard.png">
+</p>
 
 **Year-by-year customer metrics:**
 
@@ -146,7 +150,9 @@ The subcategory chart is the most analytically rich view in the project. It show
 
 ### 4. Customer Segmentation by Order Frequency
 
-#### 📸 Screenshot: "Customer Contribution by No. of Orders" bar chart — Customer Dashboard, all years
+<p align="center">
+  <img src="images/CustomerDist.png" width="700">
+</p>
 
 This chart answers a question the KPI cards can't: are customers buying once and leaving, or are they coming back?
 
@@ -165,7 +171,9 @@ This chart answers a question the KPI cards can't: are customers buying once and
 
 ### 5. Top 10 Customers by Profit
 
-#### 📸 Screenshot: "Top 10 Customers by Profit" table — Customer Dashboard, all years
+<p align="center">
+  <img src="images/Top10customers.png" width="700">
+</p>
 
 The top customer list changes every year — no single customer dominates across all four years — which suggests the high-profit segment is broad rather than dependent on a handful of accounts.
 
