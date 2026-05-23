@@ -2167,6 +2167,14 @@
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <style>
         <style-rule element='mark'>
+          <encoding attr='color' field='[none:Forecast Indicator:nk]' type='palette'>
+            <map to='#1da2d0'>
+              <bucket>&quot;Actual&quot;</bucket>
+            </map>
+            <map to='#ff5500'>
+              <bucket>&quot;Estimate&quot;</bucket>
+            </map>
+          </encoding>
           <encoding attr='color' field='[usr:Calculation_51228470522572806:nk]' type='palette'>
             <map to='#1da2d0'>
               <bucket>&quot;above&quot;</bucket>
@@ -2181,14 +2189,6 @@
             </map>
             <map to='#ff5500'>
               <bucket>&quot;below&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[none:Forecast Indicator:nk]' type='palette'>
-            <map to='#1da2d0'>
-              <bucket>&quot;Actual&quot;</bucket>
-            </map>
-            <map to='#ff5500'>
-              <bucket>&quot;Estimate&quot;</bucket>
             </map>
           </encoding>
           <encoding attr='color' field='[:Measure Names]' type='palette'>
@@ -3595,6 +3595,9 @@
               <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.07qp0fw10lqoh81cjkq750lq2iyj].[sum:PY Sales (copy)_1075445541073842190:qk]&quot;' />
             </groupfilter>
           </filter>
+          <filter class='categorical' column='[federated.07qp0fw10lqoh81cjkq750lq2iyj].[Action (Sub-Category)]'>
+            <groupfilter function='level-members' level='[Sub-Category]' user:ui-action-filter='[Action3_442D3547ADFF4D9F91E27B4173C7DC72]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <filter class='categorical' column='[federated.07qp0fw10lqoh81cjkq750lq2iyj].[Action (WEEK(Order Date))]'>
             <groupfilter function='level-members' level='[wk:Order Date:ok]' user:ui-action-filter='[Action4_70FD2C237AE740479A13194E0F7EB540]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
@@ -3606,6 +3609,7 @@
             <column>[federated.07qp0fw10lqoh81cjkq750lq2iyj].[none:State:nk]</column>
             <column>[federated.07qp0fw10lqoh81cjkq750lq2iyj].[none:City:nk]</column>
             <column>[federated.07qp0fw10lqoh81cjkq750lq2iyj].[Action (WEEK(Order Date))]</column>
+            <column>[federated.07qp0fw10lqoh81cjkq750lq2iyj].[Action (Sub-Category)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -4807,6 +4811,7 @@
           </style-rule>
           <style-rule element='table'>
             <format attr='background-color' value='#00000000' />
+            <format attr='show-null-value-warning' value='false' />
           </style-rule>
           <style-rule element='worksheet'>
             <format attr='display-field-labels' scope='rows' value='false' />
@@ -6382,7 +6387,15 @@
           </zone>
         </zone>
         <zone h='7529' id='27' param='horz' type-v2='layout-flow' w='81176' x='15848' y='3294'>
-          <zone fixed-size='1018' forceUpdate='true' h='7529' id='22' is-fixed='true' type-v2='text' w='71004' x='15848' y='3294'>
+          <zone fixed-size='70' h='7529' id='92' is-fixed='true' is-scaled='1' param='/Users/abhishek/Downloads/ChatGPT Image May 23, 2026, 11_57_51 AM.png' type-v2='bitmap' w='5398' x='15848' y='3294'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='958' forceUpdate='true' h='7529' id='22' is-fixed='true' type-v2='text' w='66852' x='21246' y='3294'>
             <formatted-text>
               <run fontcolor='#333333' fontname='Tableau Semibold' fontsize='24'>Customer&apos;s Dashboard | </run>
               <run fontcolor='#1da2d0' fontname='Tableau Semibold' fontsize='24'>&lt;[Parameters].[Parameter 1]&gt;</run>
@@ -6394,8 +6407,8 @@
               <format attr='margin' value='4' />
             </zone-style>
           </zone>
-          <zone h='7529' id='28' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='10172' x='86852' y='3294'>
-            <zone fixed-size='72' h='7530' id='30' is-fixed='true' type-v2='dashboard-object' w='5121' x='86851' y='3294'>
+          <zone h='7529' id='28' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='8926' x='88098' y='3294'>
+            <zone fixed-size='72' h='7530' id='30' is-fixed='true' type-v2='dashboard-object' w='4498' x='88097' y='3294'>
               <button action='tabdoc:goto-sheet window-id=&quot;{AAED5252-F326-4D36-907F-14656B7DEDDF}&quot;'>
                 <button-visual-state>
                   <image-path>/Users/abhishek/Documents/Assignment_1_tableau/sales-dashboard-project/images/Icon - Customer Dashboard (active).png</image-path>
@@ -6409,7 +6422,7 @@
                 <format attr='margin' value='4' />
               </zone-style>
             </zone>
-            <zone h='7530' id='29' type-v2='dashboard-object' w='5052' x='91972' y='3294'>
+            <zone h='7530' id='29' type-v2='dashboard-object' w='4429' x='92595' y='3294'>
               <button action='tabdoc:goto-sheet window-id=&quot;{79829A39-D330-42D5-8E07-59788CF7CC67}&quot;'>
                 <button-visual-state>
                   <image-path>/Users/abhishek/Documents/Assignment_1_tableau/sales-dashboard-project/images/Icon - Sales Dashboard.png</image-path>
@@ -6573,7 +6586,7 @@
             </zone-style>
           </zone>
           <zone h='39290' id='79' name='Top Customer' show-title='false' w='39308' x='57993' y='55647'>
-            <layout-cache type-h='cell' type-w='fixed' />
+            <layout-cache cell-count-h='10' type-h='cell' type-w='fixed' />
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -6585,10 +6598,10 @@
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='4800' minheight='4800' sizing-mode='vscroll' />
+          <size maxheight='4850' minheight='4850' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='89' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98118' id='88' param='vert' type-v2='layout-flow' w='98892' x='554' y='941'>
+            <zone h='100000' id='94' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98118' id='93' param='vert' type-v2='layout-flow' w='98892' x='554' y='941'>
                 <zone fixed-size='280' h='100000' id='9' is-fixed='true' is-scaled='1' param='/Users/abhishek/Documents/Assignment_1_tableau/sales-dashboard-project/Background_images/57150429_duplo28.jpg' type-v2='bitmap' w='100000' x='0' y='0'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -6617,7 +6630,16 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='1018' forceUpdate='true' h='7529' id='22' type-v2='text' w='71004' x='15848' y='3294'>
+                <zone fixed-size='56' h='7529' id='92' is-fixed='true' is-scaled='1' param='/Users/abhishek/Downloads/ChatGPT Image May 23, 2026, 11_57_51 AM.png' type-v2='bitmap' w='5398' x='15848' y='3294'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='958' forceUpdate='true' h='7529' id='22' type-v2='text' w='66852' x='21246' y='3294'>
                   <formatted-text>
                     <run fontcolor='#333333' fontname='Tableau Semibold' fontsize='24'>Customer&apos;s Dashboard | </run>
                     <run fontcolor='#1da2d0' fontname='Tableau Semibold' fontsize='24'>&lt;[Parameters].[Parameter 1]&gt;</run>
@@ -6630,7 +6652,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='72' h='7530' id='30' type-v2='dashboard-object' w='5121' x='86851' y='3294'>
+                <zone fixed-size='72' h='7530' id='30' type-v2='dashboard-object' w='4498' x='88097' y='3294'>
                   <button action='tabdoc:goto-sheet window-id=&quot;{AAED5252-F326-4D36-907F-14656B7DEDDF}&quot;'>
                     <button-visual-state>
                       <image-path>/Users/abhishek/Documents/Assignment_1_tableau/sales-dashboard-project/images/Icon - Customer Dashboard (active).png</image-path>
@@ -6645,7 +6667,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='7530' id='29' type-v2='dashboard-object' w='5052' x='91972' y='3294'>
+                <zone h='7530' id='29' type-v2='dashboard-object' w='4429' x='92595' y='3294'>
                   <button action='tabdoc:goto-sheet window-id=&quot;{79829A39-D330-42D5-8E07-59788CF7CC67}&quot;'>
                     <button-visual-state>
                       <image-path>/Users/abhishek/Documents/Assignment_1_tableau/sales-dashboard-project/images/Icon - Sales Dashboard.png</image-path>
@@ -7017,7 +7039,7 @@
                   </zone-style>
                 </zone>
                 <zone h='49000' id='11' name='Customer Segmentation' w='73416' x='25917' y='50000'>
-                  <layout-cache minwidth='159' type-h='fixed' type-w='scalable' />
+                  <layout-cache minwidth='160' type-h='fixed' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -7040,8 +7062,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1200' minheight='1200' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='18' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='17' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
+            <zone h='100000' id='22' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='21' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
                 <zone fixed-size='280' h='49000' id='9' is-fixed='true' name='Profit Forecast' w='49333' x='667' y='1000'>
                   <layout-cache minwidth='159' type-h='fixed' type-w='scalable' />
                   <zone-style>
@@ -7201,7 +7223,15 @@
           </zone-style>
         </zone>
         <zone friendly-name='HC Header' h='8000' id='20' param='horz' type-v2='layout-flow' w='91077' x='17000' y='3250'>
-          <zone fixed-size='1029' forceUpdate='true' h='8000' id='28' is-fixed='true' type-v2='text' w='79769' x='17000' y='3250'>
+          <zone fixed-size='68' h='8000' id='110' is-fixed='true' is-scaled='1' param='/Users/abhishek/Downloads/ChatGPT Image May 23, 2026, 11_57_51 AM.png' type-v2='bitmap' w='5846' x='17000' y='3250'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='958' forceUpdate='true' h='8000' id='28' is-fixed='true' type-v2='text' w='74307' x='22846' y='3250'>
             <formatted-text>
               <run fontcolor='#333333' fontname='Tableau Semibold' fontsize='24'>Sales Dashboard | </run>
               <run fontcolor='#1da2d0' fontname='Tableau Semibold' fontsize='24'>&lt;[Parameters].[Parameter 1]&gt;</run>
@@ -7213,8 +7243,8 @@
               <format attr='margin' value='4' />
             </zone-style>
           </zone>
-          <zone friendly-name='HC Buttons' h='8000' id='29' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='11308' x='96769' y='3250'>
-            <zone h='8000' id='26' type-v2='dashboard-object' w='5693' x='96769' y='3250'>
+          <zone friendly-name='HC Buttons' h='8000' id='29' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='10924' x='97153' y='3250'>
+            <zone h='8000' id='26' type-v2='dashboard-object' w='5461' x='97154' y='3250'>
               <button action='tabdoc:goto-sheet window-id=&quot;{AAED5252-F326-4D36-907F-14656B7DEDDF}&quot;'>
                 <button-visual-state>
                   <image-path>/Users/abhishek/Downloads/feedback.png</image-path>
@@ -7228,7 +7258,7 @@
                 <format attr='margin' value='4' />
               </zone-style>
             </zone>
-            <zone fixed-size='205' h='8000' id='27' is-fixed='true' type-v2='dashboard-object' w='5615' x='102462' y='3250'>
+            <zone fixed-size='205' h='8000' id='27' is-fixed='true' type-v2='dashboard-object' w='5462' x='102615' y='3250'>
               <button action='tabdoc:goto-sheet window-id=&quot;{79829A39-D330-42D5-8E07-59788CF7CC67}&quot;'>
                 <button-visual-state>
                   <image-path>/Users/abhishek/Documents/Assignment_1_tableau/sales-dashboard-project/images/Icon - Sales Dashboard(active).png</image-path>
@@ -7259,7 +7289,7 @@
           </zone>
           <zone h='3500' id='43' param='horz' type-v2='layout-flow' w='44000' x='17923' y='50125'>
             <zone fixed-size='349' h='3500' id='37' is-fixed='true' name='Legend Subcategory' show-title='false' w='27461' x='17923' y='50125'>
-              <layout-cache cell-count-h='1' type-h='cell' type-w='cell' />
+              <layout-cache type-h='cell' type-w='cell' />
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -7370,10 +7400,10 @@
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='4500' minheight='4500' sizing-mode='vscroll' />
+          <size maxheight='4550' minheight='4550' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='107' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='106' param='vert' type-v2='layout-flow' w='98770' x='615' y='1000'>
+            <zone h='100000' id='112' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='111' param='vert' type-v2='layout-flow' w='98770' x='615' y='1000'>
                 <zone fixed-size='280' h='106250' id='3' is-centered='0' is-fixed='true' is-scaled='1' param='/Users/abhishek/Documents/Assignment_1_tableau/sales-dashboard-project/Background_images/57150429_duplo28.jpg' type-v2='bitmap' w='111154' x='0' y='0'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -7392,7 +7422,16 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='1029' forceUpdate='true' h='8000' id='28' type-v2='text' w='79769' x='17000' y='3250'>
+                <zone fixed-size='56' h='8000' id='110' is-fixed='true' is-scaled='1' param='/Users/abhishek/Downloads/ChatGPT Image May 23, 2026, 11_57_51 AM.png' type-v2='bitmap' w='5846' x='17000' y='3250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='958' forceUpdate='true' h='8000' id='28' type-v2='text' w='74307' x='22846' y='3250'>
                   <formatted-text>
                     <run fontcolor='#333333' fontname='Tableau Semibold' fontsize='24'>Sales Dashboard | </run>
                     <run fontcolor='#1da2d0' fontname='Tableau Semibold' fontsize='24'>&lt;[Parameters].[Parameter 1]&gt;</run>
@@ -7405,7 +7444,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='8000' id='26' type-v2='dashboard-object' w='5693' x='96769' y='3250'>
+                <zone h='8000' id='26' type-v2='dashboard-object' w='5461' x='97154' y='3250'>
                   <button action='tabdoc:goto-sheet window-id=&quot;{AAED5252-F326-4D36-907F-14656B7DEDDF}&quot;'>
                     <button-visual-state>
                       <image-path>/Users/abhishek/Downloads/feedback.png</image-path>
@@ -7420,7 +7459,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='205' h='8000' id='27' type-v2='dashboard-object' w='5615' x='102462' y='3250'>
+                <zone fixed-size='205' h='8000' id='27' type-v2='dashboard-object' w='5462' x='102615' y='3250'>
                   <button action='tabdoc:goto-sheet window-id=&quot;{79829A39-D330-42D5-8E07-59788CF7CC67}&quot;'>
                     <button-visual-state>
                       <image-path>/Users/abhishek/Documents/Assignment_1_tableau/sales-dashboard-project/images/Icon - Sales Dashboard(active).png</image-path>
@@ -8275,7 +8314,7 @@
       </cards>
       <simple-id uuid='{37D67849-BA81-43F7-8F28-6FF7D80A1304}' />
     </window>
-    <window class='dashboard' name='Sales Dashboard'>
+    <window class='dashboard' maximized='true' name='Sales Dashboard'>
       <viewpoints>
         <viewpoint name='Abhishek Garg KPI Sales'>
           <zoom type='entire-view' />
@@ -8320,7 +8359,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='71' />
+      <active id='78' />
       <simple-id uuid='{79829A39-D330-42D5-8E07-59788CF7CC67}' />
     </window>
     <window class='dashboard' name='Customer Dashboard'>
@@ -8365,10 +8404,10 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='46' />
+      <active id='22' />
       <simple-id uuid='{AAED5252-F326-4D36-907F-14656B7DEDDF}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sales Forecast'>
+    <window class='worksheet' name='Sales Forecast'>
       <cards>
         <edge name='left'>
           <strip size='160'>
